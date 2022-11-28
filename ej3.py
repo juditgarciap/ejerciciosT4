@@ -98,6 +98,17 @@ def dijkstra(edges, f, t):
                     mins[v2] = next
                     heappush(q, (next, v2, path)) 
 
+    return (float("inf"), [])
+
+edges = graph.m_list_of_edges
+
+print("=== Dijkstra ===")
+print("king's Cross -> Waterloo: ", end="")
+print(dijkstra(edges, "king's Cross", "Waterloo"))
+print("Victoria Train Station -> Liverpool Street Station: ", end="")
+print(dijkstra(edges, "Victoria Train Station", "Liverpool Street Station"))
+print("St Pancras -> king's Cross: ", end="")
+print(dijkstra(edges, "St Pancras", "king's Cross"))
 
 
 
@@ -115,7 +126,10 @@ def dijkstra(edges, f, t):
 
 
 
+#metodo children regresa partes izquierda o derecha
 
 
 
-        metodo children regresa partes izquierda o derecha
+
+
+#binstring te da la cadena (ej0110) 
