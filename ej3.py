@@ -16,4 +16,8 @@ def add_edge(self, node1, node2, weight=1):
     if not self.m_directed:
             self.m_list_of_edges.append((node2, node1, weight))
         
-	
+#print el grafo
+def print_edge_list(self):
+        num_of_edges = len(self.m_list_of_edges)
+        for i in range(num_of_edges):
+            print("edge ", i+1, ": ", self.m_list_of_edges[i])
