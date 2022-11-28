@@ -74,3 +74,48 @@ def dijkstra(edges, f, t):
     g = defaultdict(list)
     for l, r, c in edges:
         g[l].append((c, r))
+
+ #print(g)
+    q, seen, mins = [(0, f, [])], set(), {f: 0}
+    while q:
+        (cost, v1, path) = heappop(q)
+        #print(cost, v1, path)
+        if v1 not in seen:
+            #print(seen)
+            seen.add(v1)
+            path = [v1] + path
+            if v1 == t:
+                return (cost, path)
+            #print(v1)
+            #print(g.get(v1, ()))
+            for c, v2 in g.get(v1, ()):
+                if v2 in seen:
+                    continue
+                prev = mins.get(v2, None)
+                #print(prev)
+                next = cost + c
+                if prev is None or next < prev:
+                    mins[v2] = next
+                    heappush(q, (next, v2, path)) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        metodo children regresa partes izquierda o derecha
