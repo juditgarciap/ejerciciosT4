@@ -64,3 +64,13 @@ graph.add_edge('5', '4', 4)
 graph.add_edge('4', '12', 5)
 
 graph.print_edge_list()
+
+
+from collections import defaultdict
+from heapq import *
+
+
+def dijkstra(edges, f, t):
+    g = defaultdict(list)
+    for l, r, c in edges:
+        g[l].append((c, r))
