@@ -24,4 +24,19 @@ def biseccion(f, a, b, tol, iteracion=1):
     elif f(a)*f(x) >= 0:
      # Actualizar intervalo y realizar llamada recursiva de la función.
         return biseccion(f, x, b, tol, iteracion+1)
-    
+    # Preguntar si x es una mejora del intervalo por la derecha f(b),
+    # esto es, si f(x) no cambia de signo con respecto a f(b). 
+    elif f(b)*f(x) >= 0:
+        # Actualizar intervalo y realizar llamada recursiva de la función.
+        return biseccion(f, a, x, tol, iteracion+1)
+
+
+
+# Ejecutar pruebas con la función objetivo, para una tolerancia de 0.001:    
+f = lambda x: x**3 + x + 16
+x, iteraciones = biseccion(f, -4, 0, 1e-3)
+print("Raíz estimada por método de la bisección:", x)
+print("N° de iteraciones:", iteraciones)
+
+
+# https://es.wikipedia.org/wiki/M%C3%A9todo_de_bisecci%C3%B3n
