@@ -58,7 +58,7 @@ def newton_raphson(f, x0, tol, iteracion=1):
     # el cual se toma como el h o delta x de la formula de derivación.
     x = x0 - f(x0)/dfx0
 
-    
+
     # Finalizar si se cumple la tolerancia,
     # y por lo tanto retornar la raíz estimada y el número de iteraciones.
     if -tol < f(x) < tol:
@@ -67,3 +67,12 @@ def newton_raphson(f, x0, tol, iteracion=1):
     # Actualizar aproximación para x,
     # y realizar llamada recursiva de la función.
     return newton_raphson(f, x, tol, iteracion+1)
+
+# Ejecutar pruebas con la función objetivo, para una tolerancia de 0.001:    
+f = lambda x: x**3 + x + 16
+x, iteraciones = newton_raphson(f, 0, 1e-3)
+print("Raíz estimada por método de Newton-Raphson:", x)
+print("N° de iteraciones:", iteraciones)
+
+
+# https://es.wikipedia.org/wiki/M%C3%A9todo_de_Newton
