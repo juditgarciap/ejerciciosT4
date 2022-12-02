@@ -74,5 +74,5 @@ x, iteraciones = newton_raphson(f, 0, 1e-3)
 print("Raíz estimada por método de Newton-Raphson:", x)
 print("N° de iteraciones:", iteraciones)
 
-
+import random 
 # https://es.wikipedia.org/wiki/M%C3%A9todo_de_Newton
