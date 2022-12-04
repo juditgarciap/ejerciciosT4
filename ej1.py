@@ -93,3 +93,7 @@ tabla_conteo = {
     ' ':17,
     ',':2
     }
+# obtener las frecuencias apartir de la tabla de conteo
+total_conteo = sum(tabla_conteo.values())
+tabla_frecuencia = {k:v/total_conteo for k,v in tabla_conteo.items()}
+tabla_frecuencia
