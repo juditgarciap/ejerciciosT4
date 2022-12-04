@@ -127,9 +127,4 @@ print(dijkstra(edges, "St Pancras", "king's Cross"))
 
 
 #metodo children regresa partes izquierda o derecha
-
-
-
-
-
 #binstring te da la cadena (ej0110) 
