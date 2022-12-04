@@ -31,3 +31,65 @@ def huffman_arbol_decode(msg, nodo_raiz, nodo, msgd=''):
     if len(msg) == 0:
         print('Mensaje decodificado: {}'.format(msgd))
         return msgd
+
+
+     #print(len(msg), msgd)
+    if type(nodo) is str:
+        msgd = msgd + nodo
+        nodo = nodo_raiz
+
+    (l, r) = nodo.children()
+    caracter = msg[0]
+
+    if len(msg) == 1:
+        msg = ''
+    else:
+        msg = msg[1:]
+
+    if caracter == '1':
+        huffman_arbol_decode(msg, nodo_raiz, r, msgd=msgd)
+    else:
+        huffman_arbol_decode(msg, nodo_raiz, l, msgd=msgd)
+
+def crear_arbol(nodos):
+    '''
+    Función que crea el arbol
+    :param nodos: Nodos
+    :return: Nodo raíz del árbol
+    '''
+    print(nodos)
+    print('\n')
+    while len(nodos) > 1:
+        (key1, c1) = nodos[0]
+        (key2, c2) = nodos[1]
+        nodos = nodos[2:]
+        nodo = NodoArbol(key1, key2)
+        nodos.append((nodo, c1 + c2))
+        nodos = sorted(nodos, key=lambda x: x[1], reverse=False)
+        print(nodos)
+        print('\n')
+    return nodos[0]
+
+# crear la tabla de conteo como un diccionario
+tabla_conteo = {
+    'A':11,
+    'B':2,
+    'C':4,
+    'D':3,
+    'E':14,
+    'G':3,
+    'I':6,
+    'L':6,
+    'M':3,
+    'N':6,
+    'O':7,
+    'P':4,
+    'Q':1,
+    'R':10,
+    'S':4,
+    'T':3,
+    'U':4,
+    'V':2,
+    ' ':17,
+    ',':2
+    }
