@@ -111,6 +111,13 @@ print("St Pancras -> king's Cross: ", end="")
 print(dijkstra(edges, "St Pancras", "king's Cross"))
 
 
+asignador_recursos = Asignador([mision1, mision2, mision3, mision4, mision5])
+
+asignador_recursos.AsignacionRecursosAutomatica()
+
+asignador_recursos.print_asignaciones()
+
+asignador_recursos.nuevo_pedido_recursos(mision_id='2')
 
 
 
