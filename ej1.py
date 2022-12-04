@@ -97,3 +97,9 @@ tabla_conteo = {
 total_conteo = sum(tabla_conteo.values())
 tabla_frecuencia = {k:v/total_conteo for k,v in tabla_conteo.items()}
 tabla_frecuencia
+
+# ordenar la tabla por las frecuencias de menor a mayor y orden alfabético
+lista_nodos_ordenados = sorted(tabla_frecuencia.items(), key=lambda x: x[1], reverse=False)
+lista_nodos_ordenados
+
+nodo = crear_arbol(lista_nodos_ordenados)
