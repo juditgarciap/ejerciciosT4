@@ -71,3 +71,27 @@ class Asignador():
         Speeder_Bike = []
         Stormtroopers = []
         aleatorios = []
+    for k, recursos in self.asignaciones.items():
+            print('ID Mision {}'.format(k))
+            print('Se le asignaron los siguientes recursos:')
+            print(recursos)
+
+            Scout_Troopers.append(recursos['Scout Troopers'])
+            Speeder_Bike.append(recursos['Speeder Bike'])
+            Stormtroopers.append(recursos['Stormtroopers'])
+            aleatorios.append(len(recursos['Veh. aleatorios']))
+
+    print('\nLos recursos totales asignados para las misiones son:')
+    print('Total Scout Troopers: {}'.format(sum(Scout_Troopers)))
+    print('Total Speeder Bike: {}'.format(sum(Speeder_Bike)))
+    print('Total Stormtroopers: {}'.format(sum(Stormtroopers)))
+    print('Total Veh. aleatorios: {}'.format(sum(aleatorios)))
+
+    print('FIN!')
+
+mision1 = Mision(id='1', tipo='contención', destino='Canarias', general='San Martin')
+mision2 = Mision(id='2', tipo='exploración', destino='Ecuador', general='Bolivar')
+mision3 = Mision(id='3', tipo='ataque', destino='EEUU', general='Bolivar')
+mision4 = Mision(id='4', tipo='ataque', destino='Brasil', general='Palpatine')
+mision5 = Mision(id='5', tipo='contención', destino='Canadá', general='Darth Vader')
+
